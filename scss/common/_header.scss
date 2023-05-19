@@ -46,7 +46,7 @@ header {
 ---- 가능하다면 세로 관련 높이값과 여백을 줄일 수 있으면 줄이는 것을 추천.
 
 */
-@media screen and (max-width: 979px) {
+@media screen and (max-width: $tablet) {
 	header {
 		height: 100px;
 		padding: 10px 10%;
