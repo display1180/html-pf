@@ -100,4 +100,16 @@ header {
       border: 1px solid #bbb;
       text-align: center; }
 
+@media screen and (max-width: 979px) {
+  #visual {
+    height: calc(100vh - 100px); }
+    #visual .txt h1 {
+      font-size: 12vw;
+      margin-bottom: 20px; }
+    #visual .txt p {
+      width: 100%;
+      margin-bottom: 40px; }
+    #visual .txt a {
+      width: 100%; } }
+
 /*# sourceMappingURL=style.css.map */
