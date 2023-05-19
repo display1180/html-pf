@@ -41,3 +41,29 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	#vids {
+		padding: 180px 10vw 150px;
+		.wrap {
+			gap: 20px;
+
+			article {
+				flex: none;
+				width: calc(50% - 10px);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	#vids {
+		padding: 100px 10vw 50px;
+		.wrap {
+			article {
+				width: 100%;
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
