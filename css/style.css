@@ -223,4 +223,83 @@ header {
       height: calc(50% - 10px);
       background: #555; }
 
+@media screen and (max-width: 999px) {
+  #pics {
+    padding: 100px 10vw 50px; }
+    #pics .wrap {
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; }
+      #pics .wrap .left {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 100px 0;
+        height: 400px;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: inherit; }
+      #pics .wrap .right {
+        width: 100%;
+        height: 600px;
+        gap: 20px; } }
+@media screen and (max-width: 639px) {
+  #pics {
+    padding: 100px 10vw 50px; }
+    #pics h1 {
+      margin-bottom: 30px; }
+    #pics .wrap {
+      height: auto;
+      display: flex;
+      justify-content: space-between; }
+      #pics .wrap .left {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 100px 0; }
+      #pics .wrap .right {
+        width: 100%;
+        gap: 20px; }
+        #pics .wrap .right article:nth-of-type(1) {
+          width: 100%;
+          height: 150px; }
+        #pics .wrap .right article:nth-of-type(2) {
+          width: 100%;
+          height: 150px; } }
+@media screen and (max-width: 639px) {
+  #pics {
+    padding: 120px 10vw 80px; }
+    #pics h1 {
+      margin-bottom: 30px; }
+    #pics .wrap .right {
+      height: auto; }
+      #pics .wrap .right article:nth-of-type(1),
+      #pics .wrap .right article:nth-of-type(2),
+      #pics .wrap .right article:nth-of-type(3) {
+        width: 100%;
+        height: 200px; } }
+#banner {
+  width: 100%;
+  height: 40vh;
+  background: #111;
+  padding: 0px 10vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+  background-image: url(../img/banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; }
+  #banner h1 {
+    font: bold 24px/1 'arial';
+    color: #fff; }
+  #banner p {
+    font: 14px/1.2 'arial';
+    color: #888; }
+
 /*# sourceMappingURL=style.css.map */
