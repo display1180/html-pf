@@ -171,7 +171,33 @@ header {
   #pics .left {
     width: 30%;
     height: 100%;
-    background: #333; }
+    background: #333;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    gap: 20px; }
+    #pics .left > * {
+      width: 100%;
+      text-align: center; }
+    #pics .left i {
+      font-size: 120px;
+      color: #eee; }
+    #pics .left h2 {
+      font: bold 18px/1 'arial';
+      color: #fff;
+      margin-bottom: 30px; }
+    #pics .left p {
+      font: 14px/1.2 'arial';
+      color: #888;
+      margin-bottom: 40px; }
+    #pics .left a {
+      width: 200px;
+      height: 30px;
+      border: 1px solid #aaa;
+      margin: 0 auto;
+      font: 12px/30px 'arial'; }
   #pics .right {
     width: calc(70% - 20px);
     height: 100%;
@@ -180,6 +206,10 @@ header {
     justify-content: space-between;
     align-content: space-between;
     gap: 20px; }
+    #pics .right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
     #pics .right article:nth-of-type(1) {
       width: calc(50% - 10px);
       height: calc(50% - 10px);
