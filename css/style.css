@@ -46,16 +46,26 @@ header ul.sns a {
 header .btnCall {
   display: none;
 }
+header.header_main {
+  position: absolute;
+  border-bottom: none;
+  z-index: 2;
+}
+header.header_main h1 a,
+header.header_main ul#gnb a,
+header.header_main ul.sns a,
+header.header_main .btnCall {
+  color: #fff;
+}
 
 /*
-반응형 구현 순서
-1. 일단 웹 버전의 scss구문을 모바일 미디어쿼리 안쪽에 모두 붙여넣기
-2. 고칠 필요가 없는 구문은 소거법으로 지워나감
-3. 모바일 구문에서 꼭 수정해야 되는 것들
----- 넓이값이 고정 px인 요소는 가로 폭이 100%가 되도록 퍼센트로 변환
----- 대신 높이값은 고정 px값이어도 상관없음.
----- 가능하다면 세로 관련 높이값과 여백을 줄일 수 있으면 줄이는 것을 추천.
-
+  반응형 구현 순서
+  1. 일단 웹버전의 scss구문을 모바일 미디어쿼리 안쪽에 모두 붙여넣기
+  2. 고칠 필요가 없는 구문은 소거법으로 지워나감
+  3. 모바일 구문에서 꼭 수정해야 되는 것들
+  ---- 넓이값이 고정 px인 요소는 가로 폭이 100%가 되도록 퍼센트로 변환
+  ---- 대신 높이값은 고정 px값이어도 상관없음
+  ---- 가능하다면 세로관련 높이값과 여백을 줄일 수 있으면 줄이는걸 추천
 */
 @media screen and (max-width: 999px) {
   header {
@@ -79,7 +89,7 @@ header .btnCall {
   }
 }
 footer {
-  padding: 150px 10vw;
+  padding: 120px 10vw;
   background: #333;
 }
 footer .upper {
@@ -97,7 +107,7 @@ footer .upper ul {
   gap: 20px;
 }
 footer .upper ul a {
-  font: 16px/1 "arial";
+  font: 14px/1 "arial";
   color: #777;
 }
 footer .lower {
@@ -105,7 +115,7 @@ footer .lower {
 }
 footer .lower address,
 footer .lower p {
-  font: 14px/1.6 "arial";
+  font: 14px/1.2 "arial";
   color: #777;
 }
 footer .lower address:last-child,
@@ -120,7 +130,7 @@ footer .lower p:last-child {
   }
   footer .upper h1 {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 }
 .content {
@@ -133,6 +143,7 @@ footer .lower p:last-child {
 }
 .content .inner {
   padding: 150px 10vw 100px;
+  min-height: 800px;
 }
 .content .inner h1 {
   font: normal 50px/1 "arial";
@@ -158,7 +169,7 @@ footer .lower p:last-child {
 }
 #visual {
   width: 100%;
-  height: calc(100vh - 120px);
+  height: 100vh;
   background: #111;
   position: relative;
   display: flex;
@@ -178,15 +189,15 @@ footer .lower p:last-child {
   position: relative;
 }
 #visual .txt h1 {
-  font-size: 8vw;
-  color: #fff;
   font-weight: normal;
+  font-size: 8vw;
   line-height: 1;
+  color: #fff;
   margin-bottom: 20px;
 }
 #visual .txt p {
   width: 70%;
-  font: 20px/1.4 "arial";
+  font: 20px/1.2 "arial";
   color: #888;
   margin-bottom: 80px;
 }
@@ -206,11 +217,9 @@ footer .lower p:last-child {
   }
   #visual .txt h1 {
     font-size: 12vw;
-    margin-bottom: 20px;
   }
   #visual .txt p {
     width: 100%;
-    margin-bottom: 40px;
   }
   #visual .txt a {
     width: 100%;
@@ -218,7 +227,7 @@ footer .lower p:last-child {
 }
 #vids {
   width: 100%;
-  padding: 250px 10vw 150px;
+  padding: 250px 10vw 200px;
 }
 #vids h1 {
   text-align: center;
@@ -235,6 +244,7 @@ footer .lower p:last-child {
 }
 #vids .wrap article {
   flex: 1;
+  width: 100%;
 }
 #vids .wrap article .pic {
   width: 100%;
@@ -248,11 +258,12 @@ footer .lower p:last-child {
 }
 #vids .wrap article h2 {
   font: bold 16px/1 "arial";
+  color: #555;
   margin-bottom: 10px;
 }
 #vids .wrap article p {
   font: 14px/1.3 "arial";
-  color: #777;
+  color: #888;
 }
 
 @media screen and (max-width: 999px) {
@@ -269,7 +280,7 @@ footer .lower p:last-child {
 }
 @media screen and (max-width: 639px) {
   #vids {
-    padding: 100px 10vw 50px;
+    padding: 140px 10vw 120px;
   }
   #vids .wrap article {
     width: 100%;
@@ -291,7 +302,7 @@ footer .lower p:last-child {
   display: flex;
   justify-content: space-between;
 }
-#pics .left {
+#pics .wrap .left {
   width: 30%;
   height: 100%;
   background: #333;
@@ -299,35 +310,34 @@ footer .lower p:last-child {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  flex-direction: column;
-  gap: 20px;
 }
-#pics .left > * {
+#pics .wrap .left > * {
   width: 100%;
   text-align: center;
 }
-#pics .left i {
+#pics .wrap .left i {
   font-size: 120px;
   color: #eee;
-}
-#pics .left h2 {
-  font: bold 18px/1 "arial";
-  color: #fff;
   margin-bottom: 30px;
 }
-#pics .left p {
+#pics .wrap .left h2 {
+  font: bold 18px/1 "arial";
+  color: #fff;
+  margin-bottom: 5px;
+}
+#pics .wrap .left p {
   font: 14px/1.2 "arial";
   color: #888;
   margin-bottom: 40px;
 }
-#pics .left a {
+#pics .wrap .left a {
   width: 200px;
   height: 30px;
   border: 1px solid #aaa;
-  margin: 0 auto;
   font: 12px/30px "arial";
+  color: #aaa;
 }
-#pics .right {
+#pics .wrap .right {
   width: calc(70% - 20px);
   height: 100%;
   display: flex;
@@ -336,22 +346,22 @@ footer .lower p:last-child {
   align-content: space-between;
   gap: 20px;
 }
-#pics .right img {
+#pics .wrap .right article > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#pics .right article:nth-of-type(1) {
+#pics .wrap .right article:nth-of-type(1) {
   width: calc(50% - 10px);
   height: calc(50% - 10px);
   background: #555;
 }
-#pics .right article:nth-of-type(2) {
+#pics .wrap .right article:nth-of-type(2) {
   width: calc(50% - 10px);
   height: calc(50% - 10px);
   background: #555;
 }
-#pics .right article:nth-of-type(3) {
+#pics .wrap .right article:nth-of-type(3) {
   width: 100%;
   height: calc(50% - 10px);
   background: #555;
@@ -359,66 +369,28 @@ footer .lower p:last-child {
 
 @media screen and (max-width: 999px) {
   #pics {
-    padding: 100px 10vw 50px;
+    padding: 150px 10vw 100px;
   }
   #pics .wrap {
     height: auto;
-    display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
   }
   #pics .wrap .left {
     width: 100%;
+    height: 350px;
     margin-bottom: 20px;
-    padding: 100px 0;
-    height: 400px;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: inherit;
+  }
+  #pics .wrap .left i {
+    font-size: 80px;
   }
   #pics .wrap .right {
     width: 100%;
     height: 600px;
-    gap: 20px;
-  }
-}
-@media screen and (max-width: 639px) {
-  #pics {
-    padding: 100px 10vw 50px;
-  }
-  #pics h1 {
-    margin-bottom: 30px;
-  }
-  #pics .wrap {
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-  }
-  #pics .wrap .left {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 100px 0;
-  }
-  #pics .wrap .right {
-    width: 100%;
-    gap: 20px;
-  }
-  #pics .wrap .right article:nth-of-type(1) {
-    width: 100%;
-    height: 150px;
-  }
-  #pics .wrap .right article:nth-of-type(2) {
-    width: 100%;
-    height: 150px;
   }
 }
 @media screen and (max-width: 639px) {
   #pics {
     padding: 120px 10vw 80px;
-  }
-  #pics h1 {
-    margin-bottom: 30px;
   }
   #pics .wrap .right {
     height: auto;
@@ -437,8 +409,6 @@ footer .lower p:last-child {
   padding: 0px 10vw;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  text-align: center;
   justify-content: center;
   align-content: center;
   gap: 20px;
@@ -454,7 +424,7 @@ footer .lower p:last-child {
 }
 #banner p {
   font: 14px/1.2 "arial";
-  color: #888;
+  color: #ccc;
 }
 
 #news {
@@ -493,10 +463,10 @@ footer .lower p:last-child {
   margin-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
-  min-height: 130px;
   justify-content: flex-start;
   align-content: center;
   position: relative;
+  min-height: 130px;
 }
 #news ul li::before {
   content: "";
@@ -559,17 +529,18 @@ footer .lower p:last-child {
 }
 #pop {
   width: 320px;
-  height: 150px;
+  height: 200px;
   background: #fff;
   position: fixed;
   right: 5vw;
   bottom: 5vh;
   border: 1px solid #777;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  display: none;
 }
 #pop .content {
   width: 100%;
-  height: 114px;
+  height: 160px;
   padding: 20px;
 }
 #pop .bottom {
@@ -577,17 +548,49 @@ footer .lower p:last-child {
   height: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
 }
 #pop .bottom .wrap label {
   font: 12px/1 "돋움";
-  color: #555;
-  margin-left: 10px;
+  color: #777;
+  margin-left: 2px;
 }
 #pop .bottom .close {
   font: bold 14px/1 "arial";
   color: #555;
-  padding-top: 5px;
+}
+
+.department .inner .wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.department .inner .wrap article {
+  width: 33.3333333333%;
+  border: 1px solid red;
+  float: left;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+.department .inner .wrap article .pic {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 10px;
+}
+.department .inner .wrap article .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.department .inner .wrap article h2 {
+  font: bold 20px/1 "arial";
+  color: #333;
+  margin-bottom: 5px;
+}
+.department .inner .wrap article p {
+  font: 16px/1 "arial";
+  color: #555;
 }
 
 /*# sourceMappingURL=style.css.map */

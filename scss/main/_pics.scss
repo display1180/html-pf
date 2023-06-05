@@ -2,145 +2,109 @@
 	width: 100%;
 	padding: 200px 10vw 150px;
 	background: #efefef;
+
 	h1 {
 		text-align: center;
 		margin-bottom: 50px;
 	}
+
 	.wrap {
 		width: 100%;
 		height: 60vh;
 		display: flex;
 		justify-content: space-between;
-	}
-	.left {
-		width: 30%;
-		height: 100%;
-		background: #333;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-content: center;
-		flex-direction: column;
-		gap: 20px;
 
-		> * {
-			width: 100%;
-			text-align: center;
-		}
-		i {
-			font-size: 120px;
-			color: #eee;
-		}
-		h2 {
-			font: bold 18px/1 'arial';
-			color: #fff;
-			margin-bottom: 30px;
-		}
-		p {
-			font: 14px/1.2 'arial';
-			color: #888;
-			margin-bottom: 40px;
-		}
-		a {
-			width: 200px;
-			height: 30px;
-			border: 1px solid #aaa;
-			margin: 0 auto;
-			font: 12px/30px 'arial';
-		}
-	}
-
-	.right {
-		width: calc(70% - 20px);
-		height: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-content: space-between;
-		gap: 20px;
-
-		img {
-			width: 100%;
+		.left {
+			width: 30%;
 			height: 100%;
-			object-fit: cover;
-		}
+			background: #333;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-content: center;
 
-		article:nth-of-type(1) {
-			width: calc(50% - 10px);
-			height: calc(50% - 10px);
-			background: #555;
+			> * {
+				width: 100%;
+				text-align: center;
+			}
+			i {
+				font-size: 120px;
+				color: #eee;
+				margin-bottom: 30px;
+			}
+			h2 {
+				font: bold 18px/1 'arial';
+				color: #fff;
+				margin-bottom: 5px;
+			}
+			p {
+				font: 14px/1.2 'arial';
+				color: #888;
+				margin-bottom: 40px;
+			}
+			a {
+				width: 200px;
+				height: 30px;
+				border: 1px solid #aaa;
+				font: 12px/30px 'arial';
+				color: #aaa;
+			}
 		}
-		article:nth-of-type(2) {
-			width: calc(50% - 10px);
-			height: calc(50% - 10px);
-			background: #555;
-		}
-		article:nth-of-type(3) {
-			width: 100%;
-			height: calc(50% - 10px);
-			background: #555;
+		.right {
+			width: calc(70% - 20px);
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-content: space-between;
+			gap: 20px;
+
+			article > img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			article:nth-of-type(1) {
+				width: calc(50% - 10px);
+				height: calc(50% - 10px);
+				background: #555;
+			}
+			article:nth-of-type(2) {
+				width: calc(50% - 10px);
+				height: calc(50% - 10px);
+				background: #555;
+			}
+			article:nth-of-type(3) {
+				width: 100%;
+				height: calc(50% - 10px);
+				background: #555;
+			}
 		}
 	}
 }
 
 @media screen and (max-width: $tablet) {
 	#pics {
-		padding: 100px 10vw 50px;
+		padding: 150px 10vw 100px;
+
 		.wrap {
-			height: auto; //고정되어 있는 높이값을 다시 풀어줄 때
-			display: flex;
-			justify-content: space-between;
+			//고정되어 있는 높이값을 다시 풀어줄때
+			height: auto;
 			flex-wrap: wrap;
 
 			.left {
 				width: 100%;
+				height: 350px;
 				margin-bottom: 20px;
-				padding: 100px 0;
-				height: 400px;
-				gap: 10px;
-				justify-content: center;
-				flex-wrap: wrap;
-				flex-direction: inherit;
-			}
 
+				i {
+					font-size: 80px;
+				}
+			}
 			.right {
 				width: 100%;
 				height: 600px;
-				gap: 20px;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: $mobile) {
-	#pics {
-		padding: 100px 10vw 50px;
-		h1 {
-			margin-bottom: 30px;
-		}
-		.wrap {
-			height: auto;
-			display: flex;
-			justify-content: space-between;
-
-			.left {
-				width: 100%;
-				margin-bottom: 20px;
-				padding: 100px 0;
-			}
-
-			.right {
-				width: 100%;
-				gap: 20px;
-
-				article:nth-of-type(1) {
-					width: 100%;
-					height: 150px;
-				}
-				article:nth-of-type(2) {
-					width: 100%;
-					height: 150px;
-				}
 			}
 		}
 	}
@@ -149,9 +113,7 @@
 @media screen and (max-width: $mobile) {
 	#pics {
 		padding: 120px 10vw 80px;
-		h1 {
-			margin-bottom: 30px;
-		}
+
 		.wrap {
 			.right {
 				height: auto;

@@ -1,6 +1,6 @@
 #visual {
 	width: 100%;
-	height: calc(100vh - 120px);
+	height: 100vh;
 	background: #111;
 	position: relative;
 	display: flex;
@@ -21,15 +21,15 @@
 		position: relative;
 
 		h1 {
-			font-size: 8vw;
-			color: #fff;
 			font-weight: normal;
+			font-size: 8vw;
 			line-height: 1;
+			color: #fff;
 			margin-bottom: 20px;
 		}
 		p {
 			width: 70%;
-			font: 20px/1.4 'arial';
+			font: 20px/1.2 'arial';
 			color: #888;
 			margin-bottom: 80px;
 		}
@@ -52,11 +52,9 @@
 		.txt {
 			h1 {
 				font-size: 12vw;
-				margin-bottom: 20px;
 			}
 			p {
 				width: 100%;
-				margin-bottom: 40px;
 			}
 			a {
 				width: 100%;

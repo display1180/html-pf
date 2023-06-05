@@ -1,5 +1,5 @@
 footer {
-	padding: 150px 10vw;
+	padding: 120px 10vw;
 	background: #333;
 
 	.upper {
@@ -18,17 +18,18 @@ footer {
 			gap: 20px;
 
 			a {
-				font: 16px/1 'arial';
+				font: 14px/1 'arial';
 				color: #777;
 			}
 		}
 	}
+
 	.lower {
 		padding: 20px 0px;
 
 		address,
 		p {
-			font: 14px/1.6 'arial';
+			font: 14px/1.2 'arial';
 			color: #777;
 
 			&:last-child {
@@ -46,7 +47,7 @@ footer {
 
 			h1 {
 				width: 100%;
-				margin-bottom: 20px;
+				margin-bottom: 10px;
 			}
 		}
 	}
