@@ -49,3 +49,50 @@
         }
     }
 }
+
+
+@media screen and (max-width: $tablet) {
+    .youtube {
+        .inner {
+            .wrap {
+                article {    
+                    h2 {
+                        width: 50%;
+                        font-size:28px;
+                    }
+                    .txt {
+                        width: 50%;
+                        padding-right:0px;
+                    }
+                    .pic {
+                        width:100%;
+                        margin-top:20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .youtube {
+        .inner {
+            .wrap {
+                article {    
+                    h2 {
+                        width: 100%;
+                        padding-right:0;
+                    }
+                    .txt {
+                        width: 100%;
+                        padding-top:20px;
+                    }
+                    .pic {
+                        width:100%;
+                        margin-top:20px;
+                    }
+                }
+            }
+        }
+    }
+}

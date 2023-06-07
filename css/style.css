@@ -643,4 +643,33 @@ footer .lower p:last-child {
   object-fit: cover;
 }
 
+@media screen and (max-width: 999px) {
+  .youtube .inner .wrap article h2 {
+    width: 50%;
+    font-size: 28px;
+  }
+  .youtube .inner .wrap article .txt {
+    width: 50%;
+    padding-right: 0px;
+  }
+  .youtube .inner .wrap article .pic {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .youtube .inner .wrap article h2 {
+    width: 100%;
+    padding-right: 0;
+  }
+  .youtube .inner .wrap article .txt {
+    width: 100%;
+    padding-top: 20px;
+  }
+  .youtube .inner .wrap article .pic {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
