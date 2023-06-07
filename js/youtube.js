@@ -8,12 +8,23 @@
 //배열.join('구분자') : 배열값을 구분자로 이어붙여서 하나의 문자열로 반환
 //
 
+//이벤트 위임(event delegate)
+//현재 없는 요소에 이벤트를 전달하기 위해서 항상 있는 상위 부모 요소에 이벤트를 위임(이벤트 버블링 활용한 개념)
+
+//e.target vs e.currentTarget
+//e.currentTarget : 현재 이벤트 구문상에 선택자로 연결되어 있는 요소를 지칭.
+//e.target : 화면상에서 이벤트가 발생한 대상을 지칭
+
+
+
 const wrap = document.querySelector('.youtube .wrap');
 
 const key = 'AIzaSyBwWOON8mGaabSZDeDcY0H9G5DqQ6jkwjw';
 const list = 'PLw7h_PSATrFsUKd0EJLE9yF8S1NdmrdJK';
 const num = 10;
 const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
+
+
 
 fetch(url)
 .then((data)=>data.json())
@@ -25,7 +36,7 @@ fetch(url)
         let tit = item.snippet.title;
         let desc = item.snippet.description;
         let date = item.snippet.publishedAt;
-        
+        //let vId = item.snippet.resourceId.videoId;
         tags += `
         <article>
             <h2>${tit.length > 50 ? tit.substr(0, 50) + '...' : tit}</h2>
@@ -33,14 +44,15 @@ fetch(url)
                 <p>${desc.length > 200 ? desc.substr(0, 200) + '...' : desc}</p>    
                 <span>${date.split('T')[0].split('-').join('.')}</span>
             </div>
-            <div class='pic'>
-                <img src=${item.snippet.thumbnails.standard.url} />    
+            <div class='pic' >
+                <img src=${item.snippet.thumbnails.standard.url}  alt=${item.snippet.resourceId.videoId}/>    
             </div>
         </article>
         `
     });
 
     wrap.innerHTML = tags;
+    //then 구문 안쪽에서 동기적으로 돔 요소가 동적으로 생성된 이후에만 해당 요소에 접근 가능.
 });
 
 // fetch(url)
@@ -48,3 +60,16 @@ fetch(url)
 // .then((json)=> {
 //     console.log(json);
 // })
+
+wrap.addEventListener('click', (e)=> {
+    console.log('e.currentTarget', e.currentTarget);
+    if(e.target.nodeName !=='IMG') return;
+    console.log(e.target.getAttribute('alt'));
+});
+
+
+
+//이벤트 버블링.
+//버블처럼 확산이 된다.addEventListener상위에 적는다.addEventListener
+//제한을 걸고 대상이 아이엠지 요소일 때만 실행이 되게 한다.
+//
