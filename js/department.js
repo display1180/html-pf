@@ -31,3 +31,24 @@ fetch('/DB/department.json').then((res)=> {
 //     const data = await result.json();
 //     console.log(data);
 // }
+
+
+//외부데이터 가져오는 공식
+// $.ajax('url')
+// .success(()=> {
+
+// })
+// .fail(()=> {
+
+// })
+
+// fetch('데이터 URL')
+// .then((data)=> data.json()).then((json)=> {
+//     //데이터가 성공적으로 받아졌을때 실행할 구문
+//     console.log(json)//json으로 파싱한다.
+// })
+// .catch(err=> {
+//     //데이터 응답에 실패했을 때 실행할 구문
+//     console.log(error)
+// });
+// //fetch then catch

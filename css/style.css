@@ -568,7 +568,6 @@ footer .lower p:last-child {
 }
 .department .inner .wrap article {
   width: 33.3333333333%;
-  border: 1px solid red;
   float: left;
   padding: 20px;
   margin-bottom: 40px;
@@ -591,6 +590,17 @@ footer .lower p:last-child {
 .department .inner .wrap article p {
   font: 16px/1 "arial";
   color: #555;
+}
+
+@media screen and (max-width: 999px) {
+  .department .inner .wrap article {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 639px) {
+  .department .inner .wrap article {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
