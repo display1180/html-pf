@@ -22,10 +22,37 @@
                 width:100%;
                 background:#fff;
                 padding: 20px;
+                box-shadow:5px 5px 20px rgba(0,0,0,0.05);
 
                 img {
                     width: 100%;
                 }
+
+                p {
+                    font: 18px/1.2 'architects daughter';
+                    color:#777;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $tablet) {
+    .gallery {
+        .wrap {
+            li {
+                width: calc(100% / 2);
+            }
+        }
+    }
+}
+@media screen and (max-width: $mobile) {
+    .gallery {
+        .wrap {
+            li {
+                width: calc(100% / 1);
             }
         }
     }

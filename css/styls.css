@@ -725,9 +725,27 @@ footer .lower p:last-child {
   width: 100%;
   background: #fff;
   padding: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
 }
 .gallery .wrap li > div img {
   width: 100%;
+}
+.gallery .wrap li > div p {
+  font: 18px/1.2 "architects daughter";
+  color: #777;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 999px) {
+  .gallery .wrap li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 639px) {
+  .gallery .wrap li {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=styls.css.map */
