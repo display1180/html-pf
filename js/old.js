@@ -14,6 +14,8 @@ async function fetchData(){
     const num = 10;
     const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
 
+    
+
     const data = await fetch(url);
     const json = await data.json();
     console.log(json.items);
