@@ -1,37 +1,51 @@
 const wrap = document.querySelector('.gallery .wrap');
-
-const api_key = 'b6a8ab876282930a394fe90be640af10';
-const password = '869efeb15881763d';
+const loading = document.querySelector('.gallery .loading');
+const api_key = 'ae5dbef0587895ed38171fcda4afb648';
+const num = 500;
+const myId = '198560836@N08';
+const baseURL = `https://www.flickr.com/services/rest/?format=json&nojsoncallback=1&api_key=${api_key}&per_page=${num}&method=`;
 const method_interest = 'flickr.interestingness.getList';
-const num = 15;
-const baseURL = `https://www.flickr.com/services/rest/?method=${method_interest}&api_key=${api_key}&format=json&nojsoncallback=1&per_page=${num}`;
+const method_user = 'flickr.people.getPhotos';
+const interest_url = `${baseURL}${method_interest}`;
+const user_url = `${baseURL}${method_user}&user_id=${myId}`;
 
-fetch(baseURL)
-.then(res=>res.json())
-.then((json)=>{
-    const items = json.photos.photo;
+fetch(user_url)
+	.then((res) => res.json())
+	.then((json) => {
+		const items = json.photos.photo;
+		let tags = '';
 
-    let tags= '';
+		items.forEach((item) => {
+			tags += `
+        <li class='item'>
+          <div>
+            <a href='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg'>
+              <img src='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg' />
+            </a>
+            <p>${item.title === '' ? 'Have a good day!!' : item.title}</p>
+          </div>
+        </li>
+      `;
+		});
 
-    items.forEach((item) => {
-        tags+=`
-            <li class='item'>
-                <div>
-                    <a href='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg'>
-                        <img src='https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg' />
-                    </a>
-                    <p>${item.title === '' ? 'have a good day !' : item.title}</p>
-                </div>
-            </li>
-        `;
-    })
+		wrap.innerHTML = tags;
 
-    wrap.innerHTML = tags;
+		const imgs = wrap.querySelectorAll('img');
+		let count = 0;
 
-    new Isotope( wrap, {
-        // options
-        itemSelector: '.item',
-        transitionDuration: '0.5s',
-        layoutMode: 'fitRows'
-      });
-})
+		for (const el of imgs) {
+			el.onload = () => {
+				count++;
+				count === imgs.length && isoLayout();
+			};
+		}
+	});
+
+function isoLayout() {
+	new Isotope(wrap, {
+		itemSelector: '.item',
+		transitionDuration: '0.5s',
+	});
+	wrap.classList.add('on');
+	loading.classList.add('off');
+}

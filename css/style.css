@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Work+Sans:wght@300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -182,15 +182,23 @@ footer .lower p:last-child {
   left: 0px;
   padding: 100px;
   z-index: 5;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.pop.on {
+  opacity: 1;
 }
 .pop .con {
   width: 100%;
   height: 100%;
 }
-.pop .con iframe {
+.pop .con iframe,
+.pop .con video,
+.pop .con img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: none;
 }
 .pop .close {
   font: bold 14px/1 "arial";
@@ -708,8 +716,28 @@ footer .lower p:last-child {
 }
 .gallery {
   width: 100%;
-  padding: 50px;
   overflow: hidden;
+  position: relative;
+}
+.gallery .loading {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  transition: 1s;
+}
+.gallery .loading.off {
+  opacity: 0;
+}
+.gallery .wrap {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
+}
+.gallery .wrap.on {
+  opacity: 1;
+  transform: translateY(0px);
 }
 .gallery .wrap::after {
   content: "";
@@ -724,14 +752,14 @@ footer .lower p:last-child {
 .gallery .wrap li > div {
   width: 100%;
   background: #fff;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
 }
 .gallery .wrap li > div img {
   width: 100%;
 }
 .gallery .wrap li > div p {
-  font: 18px/1.2 "architects daughter";
+  font: 18px/1.2 "Architects daughter";
   color: #777;
   margin-top: 10px;
   margin-bottom: 20px;

@@ -710,6 +710,26 @@ footer .lower p:last-child {
   width: 100%;
   padding: 50px;
   overflow: hidden;
+  position: relative;
+}
+.gallery .loading {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 1s;
+}
+.gallery .loading.off {
+  opacity: 0;
+}
+.gallery .wrap {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
+}
+.gallery .wrap.on {
+  opacity: 1;
+  transform: translateY(0px);
 }
 .gallery .wrap::after {
   content: "";

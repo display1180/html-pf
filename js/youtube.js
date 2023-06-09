@@ -9,8 +9,8 @@ document.body.addEventListener('click', (e) => {
 
 //데이터 fetching함수
 async function fetchData() {
-    const key = 'AIzaSyBwWOON8mGaabSZDeDcY0H9G5DqQ6jkwjw';
-    const list = 'PLw7h_PSATrFtbEgq6bMkkF1mRodGkZ9c6';
+	const key = 'AIzaSyCF8SOz4Cchg53VOMXZe0un2AC7zEP2apU';
+	const list = 'PLHtvRFLN5v-W5bQjvyH8QTdQQhgflJ3nu';
 	const num = 10;
 	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
 
