@@ -40,9 +40,12 @@ fetch(user_url)
 		let count = 0;
 
 		for (const el of imgs) {
+			//만약 이미지에 엑박이 뜨면, onerror 이벤트로 잡아서, 디폴트 이미지로 대체
 			el.onerror = () => {
 				el.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif');
 			};
+
+			//디폴트로 변경된 이미지까지 포함해서 카운트(무한로딩에 빠지지 않음)
 			el.onload = () => {
 				count++;
 				count === imgs.length && isoLayout();
