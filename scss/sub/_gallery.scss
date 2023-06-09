@@ -5,6 +5,33 @@
 	overflow: hidden;
 	position: relative;
 
+	.searchBox {
+		width:100%;
+		padding: 50px 10px 0;
+		font-size:0;
+
+		input {
+			width: 280px;
+			height:30px;
+			background:#fff;
+			border: 1px solid #ddd;
+			padding-left:10px;
+		}
+
+		.btnSearch {
+			width: 80px;
+			height:29px;
+			background:#333;
+			color:#fff;
+			font: bold 12px/29px 'arial';
+			text-align:center;
+			border:none;
+			cursor:pointer;
+			margin-left:10px;
+			transform:translateY(-1px);
+		}
+	}
+
 	.loading {
 		position: absolute;
 		top: 0;
@@ -44,7 +71,7 @@
 				padding: 10px;
 				box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
 
-				img {
+				.thumb {
 					width: 100%;
 				}
 
@@ -53,6 +80,21 @@
 					color: #777;
 					margin-top: 10px;
 					margin-bottom: 20px;
+				}
+				.profile {
+					width: 100%;
+
+					img {
+						width: 36px;
+					}
+
+					span {
+						display:inline-block;
+						font: 12px/1 'arial';
+						color:orange;
+						margin-left:5px;
+						transform:translateY(-10px);
+					}
 				}
 			}
 		}
